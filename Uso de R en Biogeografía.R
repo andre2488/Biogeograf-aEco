@@ -65,6 +65,7 @@ spe = read.csv(file = "spe.csv", header = T)
 
 spe                       # Mostrar la data en la consola
 spe[1:5, 1:10]            # Mostrar las primeras 5 filas y 10 columnas
+spe[,]                    # [filas,columnas]
 head(spe)                 # Mostrar las 6 primeras filas
 tail(spe)                 # Mostrar las 6 últimas filas
 nrow(spe)                 # Número de filas
