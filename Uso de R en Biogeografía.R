@@ -59,7 +59,7 @@ getwd()
 setwd()
 
 # Cargar los datos
-spe = read.csv("spe.csv", header = T)
+spe = read.csv(file = "spe.csv", header = T)
 
 # Exploración de un dataframe usando funciones básicas de R =============
 
