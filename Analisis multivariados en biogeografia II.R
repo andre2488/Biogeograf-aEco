@@ -9,7 +9,7 @@ spa = spa[-8, ]
 ## Matriz disimilitud
 library(vegan)
 ?metaMDS
-spe.nmds = metaMDS(spe, distance = "bray")
+spe.nmds = metaMDS(spe, distance = "bray", trymax = 20)
 
 spe.nmds
 spe.nmds$stress
