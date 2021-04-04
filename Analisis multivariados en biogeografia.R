@@ -110,6 +110,10 @@ plot(spe.ch.ward,
 #Desconfiguramos la vista de multiples imagenes
 dev.off()
 
+#Determinar cuantos grupos podemos obtener
+library(factoextra)
+fviz_nbclust(spe.norm, kmeans, method = "wss")
+fviz_nbclust(spe.norm, kmeans, method = "gap_stat")
 
 # Seleccionar un número común de grupos
 # Cortando los dendrogramas
@@ -122,17 +126,18 @@ spech.ward.g
 library(gclus)
 spe.chwo = reorder.hclust(spe.ch.ward, spe.ch)
 
+#Estan todos los elementos bien en sus grupos
+library(cluster)
+sil = silhouette(spech.ward.g, spe.ch)
+rownames(sil) = rownames(spe)
+plot(sil)
 # Dendrograma reordenado con etiquetas de grupo.
 
 plot(
   spe.chwo,
   xlab = "4 grupos",
   ylab = "Altura",
-  main = "Chord - Ward (reordenada)",
-  labels = cutree(spe.chwo, k = 4)
+  main = "Chord - Ward (reordenada)"
 )
 # Graficar el dendrograma con colores
 rect.hclust(spe.chwo, k = 4, border = c("red","green3","blue","cyan"))
-
-
-
