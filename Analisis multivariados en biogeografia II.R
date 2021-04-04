@@ -26,19 +26,14 @@ plot(spe.nmds, type = "t", main = "Bondad de ajuste")
 points(spe.nmds, display = "sites", cex = gof * 300)
 dev.off()
 
-# Añadir colores del agrupamiento al cluster
-# Extracción de grupos
-spe.bray = vegdist(spe)
-spe.bray.ward = hclust(spe.bray, method = "ward.D")
-spe.bw.groups = cutree(spe.bray.ward, k = 4)
-grp.lev = levels(factor(spe.bw.groups))
-
-# Combinacion resultados del NMDS
+# Anadir colores del agrupamiento al cluster
+# Extraccion de grupos
 spe.norm = decostand(spe, method = "normalize")
 spe.ch = vegdist(spe.norm, method = "bray")
 spe.ch.ward = hclust(spe.ch, method = "ward.D")
 spech.ward.g = cutree(spe.ch.ward, k = 4)
 
+# Combinacion resultados del NMDS
 color = c("red","green3","blue","cyan")
 plot(spe.nmds, type = "n", display = "sites")
 points(spe.nmds, col = color[spech.ward.g], 
