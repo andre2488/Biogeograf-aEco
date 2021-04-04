@@ -9,14 +9,22 @@ sqrt(4)
 78^4
 sin(pi/2)
 
-#Variables en R
-x=4
-1x=4
-x1=1
-x 1=1
-X1=4
-X1=8 
-x1+X1
+#Elementos en R
+Bs = 2      #R guarda datos en objetos
+Bs
+bs = 4      #Distingue entre mayusculas y minusculas
+bs
+Bs = 1      #Elementos pueden sustituirse
+k 12 = 25   #Nombres de elementos no pueden tener espacios
+12k = 25    #No se pueden empezar los elementos con un valor numerico
+d1 = "123"  #Elementos de tipo carácter se guardan entre comillas
+sm = "biogeografia"
+sm = biogeografia
+sm
+d2 = 123
+d3 = 3.5 #Elementos de tipo numérico sin comillas
+d4 = FALSE #Elementos de tipo lógico sin comillas
+
 
 #Remover elementos 
 rm(x)
