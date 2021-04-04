@@ -1,4 +1,4 @@
-#Analisis multivariados en biogeografia
+#Analisis multivariados en biogeografia I =======================
 #Cargamos las bases de datos
 spe = read.csv(file = "spe.csv", header = T)
 spa = read.csv(file = "spa.csv", header = T)
@@ -77,10 +77,10 @@ library(vegan)
 spe.norm = decostand(spe, method = "normalize")
 
 # Estimando matriz de distancias
-spe.ch = vegdist(spe.norm, method = "euc")
+spe.ch = vegdist(spe.norm, method = "bray")
 
 # Comparando dendrogramas
-par(mfrow = c(2, 3))
+par(mfrow = c(2, 2))
 
 # Single linkage
 spe.ch.single = hclust(spe.ch, method = "single")
@@ -114,7 +114,7 @@ dev.off()
 # Seleccionar un número común de grupos
 # Cortando los dendrogramas
 spech.ward.g = cutree(spe.ch.ward, k = 4)
-
+spech.ward.g
 
 # Final con grupos seleccionados =====================
 
@@ -132,9 +132,7 @@ plot(
   labels = cutree(spe.chwo, k = 4)
 )
 # Graficar el dendrograma con colores
-rect.hclust(spe.chwo, k = 4, border = 1:4)
+rect.hclust(spe.chwo, k = 4, border = c("red","green3","blue","cyan"))
 
-# Graficar los agrupamientos en el mapa
-drawmap(xy = spa,
-        clusters = spech.ward.g)
+
 
