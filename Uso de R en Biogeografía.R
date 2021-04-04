@@ -36,12 +36,12 @@ d = factor(c("masculino","femenino","femenino","femenino","masculino")) #vector 
 matriz=matrix(1:15, nrow=5,ncol=3)
 matriz
 
-#arreglo
+#Arreglo
 arreglo = array(1:24, dim=c(3,4,2))
 arreglo
 
 
-#dataframe
+#Dataframe
 data.frame(1,"Cornu aspersum", TRUE)
 
 data.frame(Sexo=d, cod=1:5, ADN=TRUE)
